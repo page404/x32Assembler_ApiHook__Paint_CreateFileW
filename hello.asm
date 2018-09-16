@@ -57,7 +57,7 @@ NEXT:
   
   push MB_OK
   push NULL
-  mov eax, [esp+2ch]
+  mov eax, [esp+2ch]  ;esp + 2ch: 保存图片的全路径,因为hook的是CreateFileW这个系统api,所以,路径就在该函数附近
   push eax
   push NULL
   call [offset g_lpMsgBox + ebx]
