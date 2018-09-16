@@ -144,7 +144,7 @@ Inject proc
     jmp EXIT_PROC
   .endif
   
-
+  ;----计算替换后的 jmp 后面的 4个字节地址值 (jmp 后面的地址是相对偏移地址)
   mov eax, @lpMem
   add eax, offset InjectCode - offset INJECTCODE_BEGIN
   ;101d19dh 地址为 writeFileW 的函数指针调用入口处地址.
